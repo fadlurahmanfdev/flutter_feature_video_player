@@ -35,21 +35,21 @@ class VideoPlayerService {
   Future<void> playHLS(
     String hlsVideoUrl, {
     Function(List<HlsResolutionVideoModel> qualitiesVideo)?
-        onGetQualitiesOfVideo,
+        onGetResolutionsOfVideo,
     Function(
       HlsResolutionVideoModel quality, {
       required bool isSelectedByUser,
-    })? onQualityChanged,
+    })? onResolutionChanged,
     Function(List<HlsSubtitleVideoModel> subtitlesVideo)? onGetSubtitlesOfVideo,
     Function(HlsSubtitleVideoModel subtitle)? onSubtitleChanged,
     Function(String? subtitleText)? onSubtitleTextChanged,
   }) async {
-    if (onGetQualitiesOfVideo != null) {
-      this.onGetQualitiesOfVideo = onGetQualitiesOfVideo;
+    if (onGetResolutionsOfVideo != null) {
+      this.onGetQualitiesOfVideo = onGetResolutionsOfVideo;
     }
 
-    if (onQualityChanged != null) {
-      this.onQualityChanged = onQualityChanged;
+    if (onResolutionChanged != null) {
+      this.onQualityChanged = onResolutionChanged;
     }
 
     if (onGetSubtitlesOfVideo != null) {
